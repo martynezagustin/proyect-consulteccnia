@@ -79,24 +79,9 @@ body{
     font-weight: 600;
     padding: 15px;
     box-shadow: 0px 0px 0px 0px;
+    font-size: 1.1em;
 }
 /*fin de atributos al section de oferta-cursos*/
-
-
-/*atributos al section de somos-consulteccnia*/
-.somos-consulteccnia{
-    padding: 15px;
-    background-color: white;
-}
-.somos-consulteccnia__h1{
-    font-size: 3.8em;
-    padding: 5px;
-    font-weight: 800;
-}
-.somos-consulteccnia__p{
-    font-size: 2.2em;
-}
-/*fin de atributos al section de somos-consulteccnia*/
 
 /*atributos al section de beneficios-consulteccnia*/
 .beneficios-consulteccnia{
@@ -108,6 +93,7 @@ body{
     box-shadow: 2px 0px 8px 1px gray;
     border-radius: 9px;
     max-width: 28%;
+    border: 2px solid gray;
 }
 .beneficios-consulteccnia__caja:hover{
     box-shadow: 0px 2px 8px 1px gray;
@@ -118,6 +104,9 @@ body{
 .beneficios-consulteccnia__p{
     font-size: 1.3em;
     color: rgb(0, 0, 0);
+}
+.beneficios-consulteccnia__img-card{
+    width: 15%;
 }
 .beneficios_consulteccnia__h3{
     font-weight: 700;
