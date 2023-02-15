@@ -178,7 +178,7 @@ body {
   color: rgb(20, 20, 20);
   padding: 15px;
 }
-.ubicacion .ubicacion iframe {
+.ubicacion .ubicacion__iframe {
   border-radius: 10px;
   box-shadow: 0px 0px 25px 3px rgb(97, 97, 97);
 }
@@ -326,11 +326,6 @@ body {
   }
   /*fin sección oferta-cursos*/
   /*sección beneficios-consulteccnia*/
-  .beneficios-consulteccnia {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
   .beneficios-consulteccnia .beneficios-consulteccnia__caja {
     max-width: 75%;
   }
