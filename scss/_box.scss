@@ -15,3 +15,7 @@ border: $sizeBorde solid $color;
   align-items: $alineacion;  
 }
 
+$hovers: (
+    sombras: $sombras-ct-hover,
+    transicion: .5s all,
+);
