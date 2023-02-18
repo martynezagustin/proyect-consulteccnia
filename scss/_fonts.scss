@@ -8,25 +8,64 @@ $font-p-oferta-cursos: 2.4em;
 $font-p-oferta-cursos-xl: 2.2em;
 $font-p-oferta-cursos-lg: 2em;
 $font-p-oferta-cursos-sm: 1.7em;
+//h1 generales
+$font-h1-size: 4.5em;
 //h2 generales
-$font-h2: 2.8em;
-$font-h2-xl: 2.4em;
-$font-h2-lg: 2.2em;
-$font-h2-md: 2em;
-$font-h2-sm: 1.8em;
+$font-h2-size: 2.8em;
+$font-h2-size-xl: 2.4em;
+$font-h2-size-lg: 2.2em;
+$font-h2-size-md: 2em;
+$font-h2-size-sm: 1.8em;
+$font-h2-weight: 800;
+$font-h2-margin: 12px;
+$font-h2-color: rgb(40,40,40);
 //h3 generales
-$font-h3: 1.6em;
-$font-h3-xl: 1.4em;
-$font-h3-lg: 1.2em;
-$font-h3-md: 1em;
-$font-h3-sm: 0.9em;
+$font-h3-size: 1.6em;
+$font-h3-size-xl: 1.4em;
+$font-h3-size-lg: 1.2em;
+$font-h3-size-md: 1em;
+$font-h3-size-sm: 0.9em;
+$font-h3-weight: 700;
+$font-h3-color: black;
 //P generales
-$font-p: 1.5em;
-$font-p-xl: 1.3em;
-$font-p-lg: 1.2em;
-$font-p-sm: 0.9em;
+$font-size-p: 1.5em;
+$font-size-p-xl: 1.3em;
+$font-size-p-lg: 1.2em;
+$font-size-p-sm: 0.9em;
 //P ventajas
-$font-p-ventajas-desktop: 1.8em;
-$font-p-ventajas-xl: 1.6em;
-$font-p-ventajas-lg: 1.3em;
-$font-p-ventajas-sm: 1.1em;
+$font-size-p-ventajas-desktop: 1.8em;
+$font-size-p-ventajas-xl: 1.6em;
+$font-size-p-ventajas-lg: 1.3em;
+$font-size-p-ventajas-sm: 1.1em;
+//sizes para card text:
+$font-size-card-sm: 0.87em;
+//generales//
+$centrar: center;
+/*estilos en general para h1 desktop, luego usados como extensión*/
+.h1-styles-desktop{
+    font-size: $font-h1-size;
+}
+/*estilos en general para h2 desktop, luego usado como extensión*/
+.h2-styles-desktop{
+    font-size: $font-h2-size;
+    text-align: $centrar;
+    color: $font-h2-color;
+    font-weight: $font-h2-weight;
+    margin: $font-h2-margin;
+}
+
+
+/*estilos en general para h3 desktop, luego usarlo como extensión*/
+.h3-styles-desktop{
+    font-size: $font-h3-size;
+    text-align: $centrar;
+    font-weight: $font-h3-weight;
+}
+
+/*clase para los hovers del a*/
+.anchor-hover{
+    background: linear-gradient(190deg, rgba(0,0,0,0.8), rgba(63, 63, 63,0.9));
+    color: rgb(230,230,230);
+    border-radius: 5px;
+    transition: .2s all;
+}

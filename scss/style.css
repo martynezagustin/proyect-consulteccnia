@@ -1,12 +1,7 @@
 @charset "UTF-8";
 /*imports*/
-/*estilos en general para h1 desktop, luego usados como extensión*/
-.h1-styles-desktop, h1 {
-  font-size: 4.5em;
-}
-
 /*estilos en general para h2 desktop, luego usado como extensión*/
-.h2-styles-desktop, h2 {
+.h2-styles-desktop, .about-me .about-me__h2, .ubicacion .ubicacion__h2, .ventajas-consulteccnia .ventajas-consulteccnia__h2 {
   font-size: 2.8em;
   text-align: center;
   color: rgb(40, 40, 40);
@@ -15,9 +10,10 @@
 }
 
 /*estilos en general para h3 desktop, luego usarlo como extensión*/
-.h3-styles-desktop, h3 {
+.h3-styles-desktop, .ventajas-consulteccnia .contenedor-padre .ventajas-consulteccnia__contenedor .ventajas-consulteccnia__h3, .beneficios-consulteccnia .beneficios-consulteccnia__caja .beneficios_consulteccnia__h3 {
   font-size: 1.6em;
   text-align: center;
+  color: black;
   font-weight: 700;
 }
 
@@ -29,7 +25,6 @@
   transition: 0.2s all;
 }
 
-/*mixin para tamaños de fuente de card-titles y altura*/
 /*reseteo universal*/
 * {
   margin: 0%;
@@ -86,8 +81,10 @@ body {
   color: rgb(20, 20, 20);
 }
 .oferta-cursos .oferta-cursos__container .oferta-cursos__h2 {
-  margin: 0%;
-  text-align: left;
+  font-weight: bolder;
+  width: 80%;
+  font-size: 2.8em;
+  margin-top: 10px;
 }
 .oferta-cursos .oferta-cursos__container .oferta-cursos__p {
   font-weight: 300;
@@ -130,12 +127,11 @@ body {
 .beneficios-consulteccnia .beneficios-consulteccnia__caja .beneficios-consulteccnia__img-card {
   width: 15%;
 }
-
 /*fin de atributos al section de beneficios-consulteccnia*/
 /*atributos al section de ventajas-consulteccnia*/
 .ventajas-consulteccnia {
   background-color: rgb(245, 245, 245);
-  padding: 10px;
+  padding: 25px;
 }
 .ventajas-consulteccnia .contenedor-padre {
   background-image: url("../assets/imgs/raya-divisora.png");
@@ -167,6 +163,9 @@ body {
 .ventajas-consulteccnia .contenedor-padre .ventajas-consulteccnia__contenedor:hover {
   transition: 0.5s all;
   box-shadow: 0px 0px 15px 3px rgb(134, 134, 134);
+}
+.ventajas-consulteccnia .contenedor-padre .ventajas-consulteccnia__contenedor .ventajas-consulteccnia__h3 {
+  color: rgb(245, 245, 245);
 }
 .ventajas-consulteccnia .contenedor-padre .ventajas-consulteccnia__contenedor .ventajas-consulteccnia__img-ventaja {
   width: 15%;
@@ -240,7 +239,7 @@ body {
 }
 .servicios .card-title {
   font-size: 1.5em;
-  height: 110px;
+  height: 90px;
 }
 
 /*fin atributos en general a la sección de servicios*/
@@ -259,25 +258,21 @@ body {
   font-size: 1.3em;
 }
 
-.contact {
-  background-color: rgb(245, 245, 245);
-  /* atributos a elementos dentro de la clase formulario*/
-}
-.contact .formulario {
-  background-color: rgb(70, 70, 70);
+/*fin de atributos a la sección de about-me*/
+/* atributos a elementos dentro de la clase formulario*/
+.formulario {
+  background-color: rgb(235, 235, 235);
   border-radius: 9px;
   box-shadow: 0px 0px 25px 3px rgb(97, 97, 97);
-  color: rgb(245, 245, 245);
 }
-.contact .formulario .form-control {
+.formulario .form-control {
   width: 40%;
   border-bottom: 1px solid rgb(70, 70, 70);
 }
-.contact .formulario .form-label {
+.formulario .form-label {
   font-weight: 800;
 }
 
-/*fin de atributos a la sección de about-me*/
 /* fin de atributos a la sección de formularios*/
 /*atributos a elementos dentro de la clase footer*/
 .footer {
@@ -325,7 +320,10 @@ body {
     height: auto;
   }
   .oferta-cursos .oferta-cursos__container .oferta-cursos__h2 {
+    font-weight: 800;
+    width: 80%;
     font-size: 2.6em;
+    margin-top: 10px;
   }
   .oferta-cursos .oferta-cursos__container .oferta-cursos__p {
     font-size: 2.2em;
@@ -378,10 +376,7 @@ body {
   }
   /*fin de sección about-me*/
   /*ancho de inputs de form*/
-  .contact .contact__h2 {
-    font-size: 2.4em;
-  }
-  .contact .formulario .form-control {
+  .formulario .form-control {
     width: 70%;
   }
   /*elementos del pie*/
@@ -471,13 +466,8 @@ body {
   .card {
     width: 16rem;
   }
-  .contact {
-    /*input del formulario*/
-  }
-  .contact .contact__h2 {
-    font-size: 2.2em;
-  }
-  .contact .formulario .form-control {
+  /*input del formulario*/
+  .formulario .form-control {
     width: 60%;
   }
   /*elementos del pie*/
@@ -535,24 +525,17 @@ body {
     border: 1px solid rgb(20, 20, 20);
     width: 13.5rem;
   }
-  .contact .contact__h2 {
-    font-size: 1.8em;
-  }
-  .contact .formulario .form-control {
+  .formulario .form-control {
     width: 90%;
   }
   /*titulos de las cards en cursos*/
   .cursos .card-title {
-    font-size: 1.2em;
-    height: 80px;
+    height: 110px;
   }
   /*títulos de las cards en servicios*/
   .servicios .card-title {
-    font-size: 1.2em;
-    height: 100px;
-  }
-  .servicios .card-text {
-    font-size: 0.87em;
+    font-size: 1.5em;
+    height: 110px;
   }
   /*el logotipo del footer al final*/
   .footer .insta {
@@ -562,6 +545,4 @@ body {
   .footer .footer__logotype {
     width: 33%;
   }
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

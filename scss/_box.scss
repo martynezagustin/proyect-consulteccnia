@@ -1,0 +1,16 @@
+$relleno-cajitas: 10px;
+
+@mixin propiedadesCajas ($radioBordes, $relleno, $bgColor, $color, $sizeBorde, $mw){
+border: $sizeBorde solid $color;
+    border-radius: $radioBordes;
+    background-color: $bgColor;
+    color: $color;
+    max-width: $mw;
+    padding: $relleno;
+}
+
+@mixin ventajas-contenedor ($flexbox, $direction, $alineacion){
+  display: $flexbox;
+  flex-direction: $direction;
+  align-items: $alineacion;  
+}
