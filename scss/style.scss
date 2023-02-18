@@ -101,13 +101,16 @@ h3{
     max-width: 100%;
     border-top: 0.2px solid $negro;
     background-color: $white-ct;
+    border-bottom: 1px solid black;
     .beneficios-consulteccnia__caja {
-        box-shadow: $sombras-ct;
-        @include propiedadesCajas(9px, 10px, $gris-ct-light, $negro, 2px, $width-caja-beneficios);
+        @include propiedadesCajas(10px, $negro,$width-caja-beneficios);
         &:hover {
             box-shadow: map-get($map: $hovers, $key: sombras);
             transition: map-get($map: $hovers, $key: transicion);
             background-color: $gris-ct-hover;
+        }
+        .beneficios_consulteccnia__h3{
+            text-decoration: underline gray;
         }
         .beneficios-consulteccnia__p {
             font-size: $font-size-p;
@@ -124,10 +127,15 @@ h3{
 .ventajas-consulteccnia {
     background-color: $white-ct;
     padding: $relleno-cajitas;
+    .ventajas-consulteccnia__h2{
+        margin-top: $margenes * 2;
+        margin-bottom: $margenes;
+    }
     .contenedor-padre {
         background-image: url("../assets/imgs/raya-divisora.png");
         background-size: cover;
         background-position: center center;
+        margin-bottom: $margenes * 2;
         .ventajas-consulteccnia__contenedor-padre__flex-start {
             @include ventajas-contenedor(flex, column, flex-start);
         }
@@ -137,7 +145,7 @@ h3{
         .ventajas-consulteccnia__contenedor {
             background-image: linear-gradient(20deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1)), url("../assets/imgs/city-map.jpg");
             background-attachment: fixed;
-            @include propiedadesCajas(7px, $relleno-cajitas, $negro, $white-ct, 2px, $width-ventajas-ct-container);
+            @include propiedadesCajas( $relleno-cajitas, $white-ct, $width-ventajas-ct-container);
             box-shadow: $sombras-ct;
             text-align: center;
             &:hover {
@@ -325,7 +333,7 @@ h3{
     /*sección beneficios-consulteccnia*/
     .beneficios-consulteccnia {
         .beneficios-consulteccnia__caja {
-            @include propiedadesCajas(10px, $relleno-cajitas, $gris-ct-light, $negro, 2px, $width-caja-beneficios-xl);
+            @include propiedadesCajas( $relleno-cajitas, $negro, $width-caja-beneficios-xl);
 
             .beneficios-consulteccnia__p {
                 font-size: $font-size-p-lg;
@@ -342,7 +350,7 @@ h3{
     .ventajas-consulteccnia {
         .contenedor-padre {
             .ventajas-consulteccnia__contenedor {
-                @include propiedadesCajas(2px, $relleno-cajitas, $negro, $gris-ct-light, 1px, $width-ventajas-ct-container);
+                @include propiedadesCajas( $relleno-cajitas, $gris-ct-light, $width-ventajas-ct-container);
                 .ventajas-consulteccnia__h2 {
                     font-size: $font-h2-size-xl;
                     padding: 0px 0px 15px 0px;
@@ -362,8 +370,6 @@ h3{
 
     /*sección about-me*/
     .about-me {
-        padding: 2px;
-    }
     .about-me__h2 {
         font-size: $font-h2-size-xl;
     }
@@ -431,7 +437,7 @@ h3{
                 align-items: center;
                 margin: 12px;
                 .ventajas-consulteccnia__contenedor {
-                    @include propiedadesCajas(2px, $relleno-cajitas, $negro, $gris-ct-light, 1px, $width-ventajas-ct-container-lg);
+                    @include propiedadesCajas($relleno-cajitas, $gris-ct-light, $width-ventajas-ct-container-lg);
                     .ventajas-consulteccnia__h3 {
                         font-size: $font-h3-size-lg;
                     }
@@ -475,11 +481,6 @@ h3{
 
     /*elementos del pie*/
     .footer {
-        .insta {
-            width: 4%;
-            padding: 3px;
-        }
-
         .footer__logotype {
             width: 17%;
         }
@@ -592,9 +593,9 @@ h3{
             width: 6.5%;
             padding: 3px;
         }
-
         .footer__logotype {
             width: 33%;
         }
     }
+}
 }
