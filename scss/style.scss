@@ -170,7 +170,7 @@ h3{
     background-color: $white-ct;
     .ubicacion__p {
         color: $negro;
-        padding: 15px;
+        padding: $relleno-cajitas + 5;
     }
     .ubicacion__iframe {
         border-radius: 10px;
@@ -452,7 +452,6 @@ h3{
 
     /*sección de about-me*/
     .about-me {
-        padding: 1px;
         .about-me__h2 {
             font-size: $font-h2-size-lg;
         }
