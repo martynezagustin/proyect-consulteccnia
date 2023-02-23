@@ -40,6 +40,11 @@
 /*archivo que añade props en los boxs y divs*/
 /*archivo que configura props en tarjetitas (cards)*/
 /*mixin para tamaños de fuente de card-titles y altura*/
+.card-duration, .cursos .card-duration {
+  font-size: 1.3em;
+  text-decoration: 1px underline gray;
+}
+
 /*reseteo universal*/
 * {
   margin: 0%;
@@ -206,14 +211,13 @@ body {
 .cursos {
   max-width: 100%;
 }
-.cursos .cursos .col {
+.cursos .col {
   padding-right: 0%;
 }
-.cursos .cursos .card-title {
+.cursos .card-title {
   font-size: 1.6em;
   height: 90px;
 }
-
 /*fin atributos a sección cursos*/
 /*atributos en general a las cards de servicios y capacitaciones*/
 .card {
@@ -373,6 +377,9 @@ body {
     font-size: 1.6em;
   }
   /*fin section ventajas-consulteccnia*/
+  .cursos .card-duration {
+    font-size: 1.2em;
+  }
   /*cards*/
   .card {
     width: 19rem;
@@ -447,6 +454,9 @@ body {
     font-size: 1.3em;
   }
   /*fin del section ventajas-consulteccnia*/
+  .cursos .card-duration {
+    font-size: 1.1em;
+  }
   /*sección de about-me*/
   .about-me .about-me__legend {
     font-size: 1.2em;
