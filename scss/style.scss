@@ -189,11 +189,14 @@ p{
 /*atributos a la sección cursos*/
 .cursos {
     max-width: 100%;
-    .cursos .col {
+    .col {
         padding-right: 0%;
     }
-    .cursos .card-title {
+    .card-title {
         @include cards-titles($font-h3-size, 90px);
+    }
+    .card-duration{
+        @extend .card-duration;
     }
 }
 /*fin atributos a sección cursos*/
@@ -367,6 +370,12 @@ p{
     }
     /*fin section ventajas-consulteccnia*/
 
+    .cursos{
+        .card-duration{
+            font-size: 1.2em;
+        }
+    }
+
     /*cards*/
     .card {
         width: $width-card-xl;
@@ -459,6 +468,12 @@ p{
         }
     }
     /*fin del section ventajas-consulteccnia*/
+
+    .cursos{
+        .card-duration{
+            font-size: 1.1em;
+        }
+    }
 
     /*sección de about-me*/
     .about-me {
