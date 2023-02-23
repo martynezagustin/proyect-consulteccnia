@@ -1,10 +1,18 @@
 /*imports*/
+
+/*archivo sobre fuentes y propiedades*/
 @import "fonts";
+/*archivo sobre colores*/
 @import "colors";
+/*archivo para maquetar grids*/
 @import "grids";
+/*archivo para sombras*/
 @import "shadows";
+/*archivo para los anchos de cajas, textos u otros elementos*/
 @import "widths";
+/*archivo que añade props en los boxs y divs*/
 @import "box";
+/*archivo que configura props en tarjetitas (cards)*/
 @import "cards";
 
 /*reseteo universal*/
@@ -27,6 +35,9 @@ h2{
 }
 h3{
     @extend .h3-styles-desktop;
+}
+p{
+    @extend .p-styles-desktop;
 }
 /*fin atributos a los h's en general*/
 
@@ -72,25 +83,21 @@ h3{
 
 /*atributos al primer section del index*/
 .oferta-cursos {
-    height: 420px;
+    height: 360px;
     background-attachment: fixed;
     .oferta-cursos__container {
         padding: 20px;
         color: $negro;
         .oferta-cursos__h2{
             margin: 0%;
-            text-align: left;
-        }
-        .oferta-cursos__p {
-            font-weight: 300;
-            border-bottom: 1px solid $negro;
-            width: 90%;
-            font-size: $font-p-oferta-cursos;
+            font-size: $font-h2-oferta-cursos;
+            transform: skew(1deg, 1deg);
         }
         .oferta-cursos__button {
             font-weight: 600;
-            padding: 15px;
-            font-size: 1.1em;
+            padding: $relleno-cajitas *2;
+            font-size: 1.8em;
+            box-shadow: $sombras-ct-navbar-toggler;
         }
     }
 }
@@ -113,7 +120,6 @@ h3{
             text-decoration: underline gray;
         }
         .beneficios-consulteccnia__p {
-            font-size: $font-size-p;
             color: $negro;
         }
         .beneficios-consulteccnia__img-card {
@@ -151,6 +157,7 @@ h3{
             &:hover {
                 transition: map-get($map: $hovers, $key: transicion);
                 box-shadow: map-get($map: $hovers, $key: sombras);
+                transform: map-get($map: $hovers, $key: transformacion)
             }
             .ventajas-consulteccnia__img-ventaja {
                 width: $width-img;
@@ -234,9 +241,6 @@ h3{
 /*atributos a la sección de about-me*/
 .about-me {
     padding: $relleno-cajitas;
-    .about-me__p {
-        font-size: $font-size-p;
-    }
     .about-me__img {
         max-width: 90%;
         box-shadow: $sombras-ct;
@@ -255,8 +259,7 @@ h3{
         background-color: $gris-ct;
         border-radius: 9px;
         box-shadow: $sombras-ct;
-        color: $white-ct;
-    
+        color: $white-ct; 
         .form-control {
             width: $width-input-form;
             border-bottom: 1px solid $gris-ct;
@@ -290,7 +293,6 @@ h3{
     hr {
         color: $white-ct;
     }
-
     a {
         color: $white-ct;
     }
@@ -312,14 +314,22 @@ h3{
 
 /*adaptación a extra large*/
 @media only screen and (max-width:1200px) {
-
+    h1{
+        font-size: $font-h1-size-xl;
+    }
+    h2{
+        font-size: $font-h2-size-xl;
+    }
+    h3{
+        font-size: $font-h3-size-xl;
+    }
+    p{
+        font-size: $font-size-p-xl;
+    }
     /*sección oferta-cursos*/
     .oferta-cursos {
         height: auto;
-        .oferta-cursos__container {
-            .oferta-cursos__h2 {
-                font-size: $font-h2-oferta-cursos-xl;
-            }
+        .oferta-cursos__container{
             .oferta-cursos__p {
                 font-size: $font-p-oferta-cursos-xl;
             }
@@ -334,14 +344,6 @@ h3{
     .beneficios-consulteccnia {
         .beneficios-consulteccnia__caja {
             @include propiedadesCajas( $relleno-cajitas, $negro, $width-caja-beneficios-xl);
-
-            .beneficios-consulteccnia__p {
-                font-size: $font-size-p-lg;
-            }
-
-            .beneficios_consulteccnia__h3 {
-                font-size: $font-h3-size-xl;
-            }
         }
     }
     /*fin de sección beneficios-consulteccnia*/
@@ -351,8 +353,10 @@ h3{
         .contenedor-padre {
             .ventajas-consulteccnia__contenedor {
                 @include propiedadesCajas( $relleno-cajitas, $gris-ct-light, $width-ventajas-ct-container);
+                &:hover{
+                    transform: none;
+                }
                 .ventajas-consulteccnia__h2 {
-                    font-size: $font-h2-size-xl;
                     padding: 0px 0px 15px 0px;
                 }
                 .ventajas-consulteccnia__p {
@@ -367,19 +371,10 @@ h3{
     .card {
         width: $width-card-xl;
     }
-
-    /*sección about-me*/
-    .about-me {
-    .about-me__h2 {
-        font-size: $font-h2-size-xl;
-    }
     /*fin de sección about-me*/
 
     /*atributos section contact*/
     .contact{
-        .contact__h2{
-            font-size: $font-h2-size-xl;
-        }
         .formulario .form-control {
             width: $width-input-form-xl;
         }
@@ -395,15 +390,40 @@ h3{
         width: 10%;
     }
 }
-
 /* adaptación a large*/
 @media only screen and (max-width:992px) {
 
+    h1{
+        font-size: $font-h1-size-lg;
+    }
+    h2{
+        font-size: $font-h2-size-lg;
+    }
+    h3{
+        font-size: $font-h3-size-lg;
+    }
+    p{
+        font-size: $font-size-p-ventajas-lg;
+    }
+
+    header{
+        .navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+            display: flex;
+            flex-wrap: inherit;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+        .navbar-toggler{
+            box-shadow: $sombras-ct-navbar-toggler;
+        }
+        .nav-link{
+            color: $negro;
+            font-weight: 800;
+        }
+    }
+
     /*sección de oferta-cursos*/
     .oferta-cursos {
-        .oferta-cursos__h2 {
-            font-size: $font-h2-oferta-cursos-lg;
-        }
         .oferta-cursos__p {
             font-size: $font-p-oferta-cursos-lg;
         }
@@ -413,10 +433,6 @@ h3{
     /*sección de beneficios-consulteccnia*/
     .beneficios-consulteccnia {
         .beneficios-consulteccnia__caja {
-            .beneficios_consulteccnia__h3 {
-                font-size: $font-h3-size-lg;
-            }
-
             .beneficios-consulteccnia__p {
                 font-size: $font-size-p-lg;
             }
@@ -426,9 +442,6 @@ h3{
 
     /*section ventajas-consulteccnia*/
     .ventajas-consulteccnia {
-        .ventajas-consulteccnia__h2 {
-            font-size: $font-h2-size-lg;
-        }
         .contenedor-padre {
             background-image: none;
             .ventajas-consulteccnia__contenedor-padre__flex-end, .ventajas-consulteccnia__contenedor-padre__flex-start{
@@ -438,9 +451,6 @@ h3{
                 margin: 12px;
                 .ventajas-consulteccnia__contenedor {
                     @include propiedadesCajas($relleno-cajitas, $gris-ct-light, $width-ventajas-ct-container-lg);
-                    .ventajas-consulteccnia__h3 {
-                        font-size: $font-h3-size-lg;
-                    }
                     .ventajas-consulteccnia__p {
                         font-size: $font-size-p-ventajas-lg;
                     }
@@ -452,9 +462,6 @@ h3{
 
     /*sección de about-me*/
     .about-me {
-        .about-me__h2 {
-            font-size: $font-h2-size-lg;
-        }
         .about-me__legend {
             font-size: 1.2em;
         }
@@ -468,9 +475,6 @@ h3{
 
     /*section de contact*/
     .contact{
-        .contact__h2{
-            font-size: $font-h2-size-lg;
-        }
         /*input del formulario*/
         .formulario .form-control {
             width: $width-input-form-lg;
@@ -488,6 +492,19 @@ h3{
 
 /*adaptando medidas a extra small*/
 @media only screen and (min-width: 270px) and (max-width: 576px) {
+    
+    h1{
+        font-size: $font-h1-size-sm;
+    }
+    h2{
+        font-size: $font-h2-size-sm;
+    }
+    h3{
+        font-size: $font-h3-size-sm;
+    }
+    p{
+        font-size: $font-size-p-sm;
+    }
     /*section de oferta-cursos*/
     .oferta-cursos {
         .oferta-cursos__container {
@@ -504,48 +521,9 @@ h3{
             }
         }
     }
-    /*fin section de oferta-cursos*/
-
-    /*atributos al section de ventajas-consulteccnia*/
-    .ventajas-consulteccnia {
-        .contenedor-padre {
-            .ventajas-consulteccnia__contenedor-padre__flex-start {
-                .ventajas-consulteccnia__contenedor {
-                    .ventajas-consulteccnia__h3 {
-                        font-size: $font-h3-size-sm;
-                    }
-
-                    .ventajas-consulteccnia__p {
-                        font-size: $font-size-p-ventajas-sm;
-                    }
-                }
-            }
-            .ventajas-consulteccnia__contenedor-padre__flex-end {
-                .ventajas-consulteccnia__contenedor {
-                    .ventajas-consulteccnia__h3 {
-                        font-size: $font-h3-size-sm;
-                    }
-                    .ventajas-consulteccnia__p {
-                        font-size: $font-size-p-ventajas-sm;
-                    }
-                }
-            }
-        }
-    }
-    /*fin de atributos al section de ventajas-consulteccnia*/
-
-    /*atributos al section de ubicacion*/
-    .ubicacion {
-        .ubicacion__h2 {
-            font-size: $font-h2-size-sm;
-        }
-    }
     /*fin atributos al section de ubicacion*/
 
     /*sección de about-me*/
-    .about-me__h2 {
-        font-size: $font-h2-size-sm;
-    }
     .about-me__legend {
         font-size: 0.9em;
     }
@@ -558,9 +536,6 @@ h3{
 
     /*atributos a contact*/
     .contact{
-        .contact__h2{
-            font-size: $font-h2-size-sm;
-        }
         .formulario {
             .form-control {
                 width: $width-input-form-sm;
@@ -596,5 +571,4 @@ h3{
             width: 33%;
         }
     }
-}
 }
