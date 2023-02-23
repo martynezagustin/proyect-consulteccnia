@@ -16,4 +16,6 @@ $margenes: 50px;
 $hovers: (
     sombras: $sombras-ct-hover,
     transicion: .5s all,
+    transformacion: skew(0deg,2deg)
 );
+
