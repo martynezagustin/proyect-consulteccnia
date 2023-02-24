@@ -129,7 +129,7 @@ p {
             text-decoration: underline gray;
         }
         .beneficios-consulteccnia__img-card {
-            width: $width-img
+            width: $width-img;
         }
     }
 }
@@ -469,6 +469,9 @@ p {
 
     /*section ventajas-consulteccnia*/
     .ventajas-consulteccnia {
+        .ventajas-consulteccnia__h2{
+            margin: $margenes / 2;
+        }
         .contenedor-padre {
             background-image: none;
             .ventajas-consulteccnia__contenedor-padre__flex-end,
