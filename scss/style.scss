@@ -250,12 +250,10 @@ p {
 /*atributos a la sección de about-me*/
 .about-me {
     padding: $relleno-cajitas;
-
     .about-me__img {
         max-width: 90%;
         box-shadow: $sombras-ct;
     }
-
     .about-me__legend {
         font-size: 1.3em;
     }
@@ -350,7 +348,7 @@ p {
     /*fin sección oferta-cursos*/
 
     /*sección beneficios-consulteccnia*/
-    .beneficios-consulteccnia {
+    .beneficios-consulteccnia{
         .beneficios-consulteccnia__caja {
             @include propiedadesCajas($relleno-cajitas, $negro, $width-caja-beneficios-xl);
         }
