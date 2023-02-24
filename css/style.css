@@ -45,6 +45,35 @@
   text-decoration: 1px underline gray;
 }
 
+/*archivo que añade animaciones*/
+.animation-button-courses, .oferta-cursos .oferta-cursos__container .oferta-cursos__button {
+  animation-name: animation-button-courses;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+}
+@keyframes animation-button-courses {
+  0% {
+    transform: translate(0px, 1px);
+  }
+  25% {
+    transform: translate(30px, 2px);
+  }
+  50% {
+    transform: translate(50px, 2px);
+    background-color: rgb(20, 20, 20);
+    box-shadow: 0px 0px 25px 3px rgb(97, 97, 97);
+    color: rgb(245, 245, 245);
+  }
+  75% {
+    transform: translate(30px, 2px);
+    transform: skew(1deg, 1deg);
+  }
+  100% {
+    transform: translate(0px, 1px);
+  }
+}
+
 /*reseteo universal*/
 * {
   margin: 0%;
@@ -106,13 +135,13 @@ body {
 .oferta-cursos .oferta-cursos__container .oferta-cursos__h2 {
   margin: 0%;
   font-size: 3.8em;
+  font-family: Arial, Helvetica, sans-serif;
   transform: skew(1deg, 1deg);
 }
 .oferta-cursos .oferta-cursos__container .oferta-cursos__button {
   font-weight: 600;
   padding: 20px;
   font-size: 1.8em;
-  box-shadow: 0px 2px 5px 0px;
 }
 
 /*fin de atributos al primer section del index*/
@@ -135,9 +164,6 @@ body {
 }
 .beneficios-consulteccnia .beneficios-consulteccnia__caja .beneficios_consulteccnia__h3 {
   text-decoration: underline gray;
-}
-.beneficios-consulteccnia .beneficios-consulteccnia__caja .beneficios-consulteccnia__p {
-  color: rgb(20, 20, 20);
 }
 .beneficios-consulteccnia .beneficios-consulteccnia__caja .beneficios-consulteccnia__img-card {
   width: 15%;
@@ -412,7 +438,17 @@ body {
   p {
     font-size: 1.3em;
   }
-  header .navbar > .container, header .navbar > .container-fluid, header .navbar > .container-lg, header .navbar > .container-md, header .navbar > .container-sm, header .navbar > .container-xl, header .navbar > .container-xxl {
+  header {
+    background-color: rgb(235, 235, 235);
+    box-shadow: 0px 0px 25px 3px rgb(97, 97, 97);
+  }
+  header .navbar > .container,
+  header .navbar > .container-fluid,
+  header .navbar > .container-lg,
+  header .navbar > .container-md,
+  header .navbar > .container-sm,
+  header .navbar > .container-xl,
+  header .navbar > .container-xxl {
     display: flex;
     flex-wrap: inherit;
     align-items: flex-start;
@@ -425,9 +461,12 @@ body {
     color: rgb(20, 20, 20);
     font-weight: 800;
   }
+  header .navbar-collapse {
+    margin-top: 12.5px;
+  }
   /*sección de oferta-cursos*/
-  .oferta-cursos .oferta-cursos__p {
-    font-size: 2em;
+  .oferta-cursos .oferta-cursos__container .oferta-cursos__h2 {
+    font-size: 2.6em;
   }
   /*fin de sección de oferta-cursos*/
   /*sección de beneficios-consulteccnia*/
@@ -439,18 +478,21 @@ body {
   .ventajas-consulteccnia .contenedor-padre {
     background-image: none;
   }
-  .ventajas-consulteccnia .contenedor-padre .ventajas-consulteccnia__contenedor-padre__flex-end, .ventajas-consulteccnia .contenedor-padre .ventajas-consulteccnia__contenedor-padre__flex-start {
+  .ventajas-consulteccnia .contenedor-padre .ventajas-consulteccnia__contenedor-padre__flex-end,
+  .ventajas-consulteccnia .contenedor-padre .ventajas-consulteccnia__contenedor-padre__flex-start {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 12px;
   }
-  .ventajas-consulteccnia .contenedor-padre .ventajas-consulteccnia__contenedor-padre__flex-end .ventajas-consulteccnia__contenedor, .ventajas-consulteccnia .contenedor-padre .ventajas-consulteccnia__contenedor-padre__flex-start .ventajas-consulteccnia__contenedor {
+  .ventajas-consulteccnia .contenedor-padre .ventajas-consulteccnia__contenedor-padre__flex-end .ventajas-consulteccnia__contenedor,
+  .ventajas-consulteccnia .contenedor-padre .ventajas-consulteccnia__contenedor-padre__flex-start .ventajas-consulteccnia__contenedor {
     padding: 10px;
     color: rgb(235, 235, 235);
     max-width: 95%;
   }
-  .ventajas-consulteccnia .contenedor-padre .ventajas-consulteccnia__contenedor-padre__flex-end .ventajas-consulteccnia__contenedor .ventajas-consulteccnia__p, .ventajas-consulteccnia .contenedor-padre .ventajas-consulteccnia__contenedor-padre__flex-start .ventajas-consulteccnia__contenedor .ventajas-consulteccnia__p {
+  .ventajas-consulteccnia .contenedor-padre .ventajas-consulteccnia__contenedor-padre__flex-end .ventajas-consulteccnia__contenedor .ventajas-consulteccnia__p,
+  .ventajas-consulteccnia .contenedor-padre .ventajas-consulteccnia__contenedor-padre__flex-start .ventajas-consulteccnia__contenedor .ventajas-consulteccnia__p {
     font-size: 1.3em;
   }
   /*fin del section ventajas-consulteccnia*/
@@ -499,10 +541,6 @@ body {
   }
   .oferta-cursos .oferta-cursos__container .oferta-cursos__h2 {
     font-size: 2em;
-    width: 100%;
-  }
-  .oferta-cursos .oferta-cursos__container .oferta-cursos__p {
-    font-size: 1.7em;
   }
   .oferta-cursos .oferta-cursos__container .oferta-cursos__button {
     font-size: 1em;
