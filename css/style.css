@@ -373,9 +373,6 @@ body {
   .oferta-cursos {
     height: auto;
   }
-  .oferta-cursos .oferta-cursos__container .oferta-cursos__p {
-    font-size: 2.2em;
-  }
   .oferta-cursos .oferta-cursos__container .oferta-cursos__button {
     padding: 10px;
   }
