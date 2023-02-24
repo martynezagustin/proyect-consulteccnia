@@ -14,6 +14,8 @@
 @import "box";
 /*archivo que configura props en tarjetitas (cards)*/
 @import "cards";
+/*archivo que añade animaciones*/
+@import "animations";
 
 /*reseteo universal*/
 * {
@@ -27,18 +29,22 @@ body {
 }
 
 /*atributos a los h's en general*/
-h1{
+h1 {
     @extend .h1-styles-desktop;
 }
-h2{
+
+h2 {
     @extend .h2-styles-desktop;
 }
-h3{
+
+h3 {
     @extend .h3-styles-desktop;
 }
-p{
+
+p {
     @extend .p-styles-desktop;
 }
+
 /*fin atributos a los h's en general*/
 
 /*estructuras de la clase body*/
@@ -52,6 +58,7 @@ p{
     background-attachment: fixed;
     background-size: cover;
 }
+
 /*fin estructuras al body*/
 
 /*atributos en general al header*/
@@ -74,6 +81,7 @@ p{
         }
     }
 }
+
 /*fin atributos en general al header*/
 
 /*clase main con su grid area*/
@@ -88,16 +96,17 @@ p{
     .oferta-cursos__container {
         padding: 20px;
         color: $negro;
-        .oferta-cursos__h2{
+        .oferta-cursos__h2 {
             margin: 0%;
             font-size: $font-h2-oferta-cursos;
+            font-family: Arial, Helvetica, sans-serif;
             transform: skew(1deg, 1deg);
         }
         .oferta-cursos__button {
             font-weight: 600;
             padding: $relleno-cajitas *2;
             font-size: 1.8em;
-            box-shadow: $sombras-ct-navbar-toggler;
+            @extend .animation-button-courses;
         }
     }
 }
@@ -110,17 +119,14 @@ p{
     background-color: $white-ct;
     border-bottom: 1px solid black;
     .beneficios-consulteccnia__caja {
-        @include propiedadesCajas(10px, $negro,$width-caja-beneficios);
+        @include propiedadesCajas(10px, $negro, $width-caja-beneficios);
         &:hover {
             box-shadow: map-get($map: $hovers, $key: sombras);
             transition: map-get($map: $hovers, $key: transicion);
             background-color: $gris-ct-hover;
         }
-        .beneficios_consulteccnia__h3{
+        .beneficios_consulteccnia__h3 {
             text-decoration: underline gray;
-        }
-        .beneficios-consulteccnia__p {
-            color: $negro;
         }
         .beneficios-consulteccnia__img-card {
             width: $width-img
@@ -133,7 +139,7 @@ p{
 .ventajas-consulteccnia {
     background-color: $white-ct;
     padding: $relleno-cajitas;
-    .ventajas-consulteccnia__h2{
+    .ventajas-consulteccnia__h2 {
         margin-top: $margenes * 2;
         margin-bottom: $margenes;
     }
@@ -151,7 +157,7 @@ p{
         .ventajas-consulteccnia__contenedor {
             background-image: linear-gradient(20deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1)), url("../assets/imgs/city-map.jpg");
             background-attachment: fixed;
-            @include propiedadesCajas( $relleno-cajitas, $white-ct, $width-ventajas-ct-container);
+            @include propiedadesCajas($relleno-cajitas, $white-ct, $width-ventajas-ct-container);
             box-shadow: $sombras-ct;
             text-align: center;
             &:hover {
@@ -195,7 +201,7 @@ p{
     .card-title {
         @include cards-titles($font-h3-size, 90px);
     }
-    .card-duration{
+    .card-duration {
         @extend .card-duration;
     }
 }
@@ -211,14 +217,14 @@ p{
         transition: map-get($map: $hovers, $key: transicion);
         background-color: $negro;
         color: $gris-ct-hover;
-        @if (background-color: $negro){
-            .btn{
+        @if (background-color: $negro) {
+            .btn {
                 background-color: $white-ct;
                 color: $negro;
                 transition: map-get($map: $hovers, $key: transicion);
                 font-weight: 400;
             }
-            .card-img-top{
+            .card-img-top {
                 transition: map-get($map: $hovers, $key: transicion);
             }
         }
@@ -244,10 +250,12 @@ p{
 /*atributos a la sección de about-me*/
 .about-me {
     padding: $relleno-cajitas;
+
     .about-me__img {
         max-width: 90%;
         box-shadow: $sombras-ct;
-    }    
+    }
+
     .about-me__legend {
         font-size: 1.3em;
     }
@@ -255,19 +263,18 @@ p{
 /*fin de atributos a la sección de about-me*/
 
 /*atributos al section de la page contactos*/
-.contact{
+.contact {
     background-color: $white-ct;
     /* atributos a elementos dentro de la clase formulario*/
     .formulario {
         background-color: $gris-ct;
         border-radius: 9px;
         box-shadow: $sombras-ct;
-        color: $white-ct; 
+        color: $white-ct;
         .form-control {
             width: $width-input-form;
             border-bottom: 1px solid $gris-ct;
         }
-    
         .form-label {
             font-weight: 800;
         }
@@ -309,6 +316,7 @@ p{
         width: 10%;
     }
 }
+
 /*fin atributos a elementos dentro de la clase footer*/
 
 /*AQUÍ COMIENZAN LOS MEDIA QUERIES*/
@@ -317,22 +325,23 @@ p{
 
 /*adaptación a extra large*/
 @media only screen and (max-width:1200px) {
-    h1{
+    h1 {
         font-size: $font-h1-size-xl;
     }
-    h2{
+    h2 {
         font-size: $font-h2-size-xl;
     }
-    h3{
+    h3 {
         font-size: $font-h3-size-xl;
     }
-    p{
+    p {
         font-size: $font-size-p-xl;
     }
+
     /*sección oferta-cursos*/
     .oferta-cursos {
         height: auto;
-        .oferta-cursos__container{
+        .oferta-cursos__container {
             .oferta-cursos__p {
                 font-size: $font-p-oferta-cursos-xl;
             }
@@ -346,7 +355,7 @@ p{
     /*sección beneficios-consulteccnia*/
     .beneficios-consulteccnia {
         .beneficios-consulteccnia__caja {
-            @include propiedadesCajas( $relleno-cajitas, $negro, $width-caja-beneficios-xl);
+            @include propiedadesCajas($relleno-cajitas, $negro, $width-caja-beneficios-xl);
         }
     }
     /*fin de sección beneficios-consulteccnia*/
@@ -355,8 +364,8 @@ p{
     .ventajas-consulteccnia {
         .contenedor-padre {
             .ventajas-consulteccnia__contenedor {
-                @include propiedadesCajas( $relleno-cajitas, $gris-ct-light, $width-ventajas-ct-container);
-                &:hover{
+                @include propiedadesCajas($relleno-cajitas, $gris-ct-light, $width-ventajas-ct-container);
+                &:hover {
                     transform: none;
                 }
                 .ventajas-consulteccnia__h2 {
@@ -370,8 +379,8 @@ p{
     }
     /*fin section ventajas-consulteccnia*/
 
-    .cursos{
-        .card-duration{
+    .cursos {
+        .card-duration {
             font-size: 1.2em;
         }
     }
@@ -383,7 +392,7 @@ p{
     /*fin de sección about-me*/
 
     /*atributos section contact*/
-    .contact{
+    .contact {
         .formulario .form-control {
             width: $width-input-form-xl;
         }
@@ -394,47 +403,59 @@ p{
     .footer .insta {
         width: 4%;
     }
-
     .footer__logotype {
         width: 10%;
     }
 }
+
 /* adaptación a large*/
 @media only screen and (max-width:992px) {
-
-    h1{
+    h1 {
         font-size: $font-h1-size-lg;
     }
-    h2{
+    h2 {
         font-size: $font-h2-size-lg;
     }
-    h3{
+    h3 {
         font-size: $font-h3-size-lg;
     }
-    p{
+    p {
         font-size: $font-size-p-ventajas-lg;
     }
 
-    header{
-        .navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+    header {
+        background-color: $gris-ct-light;
+        box-shadow: $sombras-ct;
+        .navbar>.container,
+        .navbar>.container-fluid,
+        .navbar>.container-lg,
+        .navbar>.container-md,
+        .navbar>.container-sm,
+        .navbar>.container-xl,
+        .navbar>.container-xxl {
             display: flex;
             flex-wrap: inherit;
             align-items: flex-start;
             flex-direction: column;
         }
-        .navbar-toggler{
+        .navbar-toggler {
             box-shadow: $sombras-ct-navbar-toggler;
         }
-        .nav-link{
+        .nav-link {
             color: $negro;
             font-weight: 800;
+        }
+        .navbar-collapse{
+            margin-top: $margenes / 4;
         }
     }
 
     /*sección de oferta-cursos*/
     .oferta-cursos {
-        .oferta-cursos__p {
-            font-size: $font-p-oferta-cursos-lg;
+        .oferta-cursos__container{
+            .oferta-cursos__h2{
+                font-size: $font-h2-oferta-cursos-lg;
+            }    
         }
     }
     /*fin de sección de oferta-cursos*/
@@ -453,7 +474,8 @@ p{
     .ventajas-consulteccnia {
         .contenedor-padre {
             background-image: none;
-            .ventajas-consulteccnia__contenedor-padre__flex-end, .ventajas-consulteccnia__contenedor-padre__flex-start{
+            .ventajas-consulteccnia__contenedor-padre__flex-end,
+            .ventajas-consulteccnia__contenedor-padre__flex-start {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -469,8 +491,8 @@ p{
     }
     /*fin del section ventajas-consulteccnia*/
 
-    .cursos{
-        .card-duration{
+    .cursos {
+        .card-duration {
             font-size: 1.1em;
         }
     }
@@ -489,7 +511,7 @@ p{
     }
 
     /*section de contact*/
-    .contact{
+    .contact {
         /*input del formulario*/
         .formulario .form-control {
             width: $width-input-form-lg;
@@ -507,28 +529,25 @@ p{
 
 /*adaptando medidas a extra small*/
 @media only screen and (min-width: 270px) and (max-width: 576px) {
-    h1{
+    h1 {
         font-size: $font-h1-size-sm;
     }
-    h2{
+    h2 {
         font-size: $font-h2-size-sm;
     }
-    h3{
+    h3 {
         font-size: $font-h3-size-sm;
     }
-    p{
+    p {
         font-size: $font-size-p-sm;
     }
+
     /*section de oferta-cursos*/
     .oferta-cursos {
         .oferta-cursos__container {
             color: $negro;
             .oferta-cursos__h2 {
                 font-size: $font-h2-oferta-cursos-sm;
-                width: 100%;
-            }
-            .oferta-cursos__p {
-                font-size: $font-p-oferta-cursos-sm;
             }
             .oferta-cursos__button {
                 font-size: 1em;
@@ -549,7 +568,7 @@ p{
     }
 
     /*atributos a contact*/
-    .contact{
+    .contact {
         .formulario {
             .form-control {
                 width: $width-input-form-sm;
@@ -570,7 +589,7 @@ p{
         .card-title {
             @include cards-titles(1.2em, 100px);
         }
-        .card-text{
+        .card-text {
             font-size: $font-size-card-sm;
         }
     }
