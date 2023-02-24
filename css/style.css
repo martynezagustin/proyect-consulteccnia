@@ -166,7 +166,7 @@ body {
   text-decoration: underline gray;
 }
 .beneficios-consulteccnia .beneficios-consulteccnia__caja .beneficios-consulteccnia__img-card {
-  width: 15%;
+  width: 24%;
 }
 
 /*fin de atributos al section de beneficios-consulteccnia*/
@@ -210,7 +210,7 @@ body {
   transform: skew(0deg, 2deg);
 }
 .ventajas-consulteccnia .contenedor-padre .ventajas-consulteccnia__contenedor .ventajas-consulteccnia__img-ventaja {
-  width: 15%;
+  width: 24%;
 }
 .ventajas-consulteccnia .contenedor-padre .ventajas-consulteccnia__contenedor .ventajas-consulteccnia__p {
   font-size: 1.8em;
@@ -472,6 +472,9 @@ body {
   }
   /*fin sección de beneficios-consulteccnia*/
   /*section ventajas-consulteccnia*/
+  .ventajas-consulteccnia .ventajas-consulteccnia__h2 {
+    margin: 25px;
+  }
   .ventajas-consulteccnia .contenedor-padre {
     background-image: none;
   }
