@@ -7,23 +7,30 @@
 
     @keyframes animation-button-courses {
         0% {
-            transform: translate(0px, 1px);
+            opacity: 0.2;
         }
         25% {
-            transform: translate(30px, 2px);
+            opacity: 0.4;
         }
         50% {
-            transform: translate(50px, 2px);
+            opacity: 0.6;
             background-color: $negro;
             box-shadow: $sombras-ct;
             color: $white-ct;
+            border-radius: 40px;
         }
         75% {
-            transform: translate(30px, 2px);
-            transform: skew(1deg, 1deg);
+            opacity: 0.8;
+            background-color: $negro;
+            box-shadow: $sombras-ct;
+            color: $white-ct;
+            box-shadow: 2px 0px 15px 1px rgb(201, 201, 172);
         }
         100% {
-            transform: translate(0px, 1px);
+            opacity: 1;
+            background-color: $negro;
+            box-shadow: $sombras-ct;
+            color: $white-ct;
         }
     }
 }
