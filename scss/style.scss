@@ -209,14 +209,14 @@ p {
 
 /*atributos en general a las cards de servicios y capacitaciones*/
 .card {
-    background-color: $gris-ct-light;
+    background-color: $white-ct;
     border: 1px solid $negro;
     width: $width-card;
     &:hover {
         box-shadow: map-get($map: $hovers, $key: sombras);
         transition: map-get($map: $hovers, $key: transicion);
         background-color: $negro;
-        color: $gris-ct-hover;
+        color: $white-ct;
         @if (background-color: $negro) {
             .btn {
                 background-color: $white-ct;
@@ -265,13 +265,13 @@ p {
     background-color: $white-ct;
     /* atributos a elementos dentro de la clase formulario*/
     .formulario {
-        background-color: $gris-ct;
+        background-color: $white-ct;
         border-radius: 9px;
         box-shadow: $sombras-ct;
         color: $white-ct;
         .form-control {
             width: $width-input-form;
-            border-bottom: 1px solid $gris-ct;
+            border-bottom: 1px solid $white-ct;
         }
         .form-label {
             font-weight: 800;
